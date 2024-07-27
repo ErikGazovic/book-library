@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+    <section>
+        <h1>Books I Have Read</h1>
+        <div><a class="btn" href="/add-book">Add Book</a></div>
+        <div style="display: flex; align-self: center; gap: 5px; align-items: center;">
+        <form class="order" action="/ratingasc" method="post">
+            <label for="orderAsc">Order By ⬆️:</label>
+                <input type="text" value="rating" hidden name="ratinga">
+                <button type="submit" class="delete" style="font-size: 15px;">Rating</button>
+            </form>
+        <form class="order" action="/titleasc" method="post">
+                <input type="text" value="title" hidden name="titlea">
+                <button type="submit" class="delete" style="font-size: 15px;">Title</button>
+        </form>
+        <form class="order" action="/dateasc" method="post">
+                <input type="text" value="date" hidden name="datea">
+                <button type="submit" class="delete" style="font-size: 15px;">Date</button>
+        </form>
+        </div>
+        <div style="display: flex; align-self: center; gap: 5px; align-items: center;">
+            <form class="order" action="/ratingdesc" method="post">
+                <label for="orderAsc">Order By ⬇️:</label>
+                    <input type="text" value="rating" hidden name="ratingd">
+                    <button type="submit" class="delete" style="font-size: 15px;">Rating</button>
+                </form>
+            <form class="order" action="/titledesc" method="post">
+                    <input type="text" value="title" hidden name="titled">
+                    <button type="submit" class="delete" style="font-size: 15px;">Title</button>
+            </form>
+            <form class="order" action="/datedesc" method="post">
+                    <input type="text" value="date" hidden name="dated">
+                    <button type="submit" class="delete" style="font-size: 15px;">Date</button>
+            </form>
+            </div>
+        <% if (locals.order) { %>
+        <h4>Current order by: <%= order %></h4>
+        <% } else { %>
+            <h4>Current order by: Default</h4>
+        <% } %>
+        <div class="full-width"><div></div></div>
+        <div class="container">
+            <% for(let book of books) { %>
+                <div class="book-box">
+                    <div class="box-div"><img src="https://covers.openlibrary.org/b/isbn/<%= book.book_isbn %>-M.jpg" alt="book cover"></div>
+                    <p style="font-size: 20px; font-weight: 800;"><span>Title:</span>  <%= book.book_title %></p> <br>
+                    <p><span>Written By:</span>  <%= book.book_author %> </p><br> <br>
+                    <p><span>Review:</span>  <%= book.book_review %> </p><br> <br>
+                    <p><span>Rating:</span>  <%= book.book_rating %>/10</p><br> 
+                    <p><span>Date:</span>  <%= book.book_date %></p>
+                    <div class="buttons">
+                        <button class="edit"><a href="/edit-book/<%= book.id %>" id="done<%=book.id%>" >Edit</a></button>
+                        <form action="/delete" method="post">
+                            <input type="hidden" name="deletedBookId" value="<%= book.id %>">
+                            <button id="done<%=book.id%>" class="delete" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </section>
+<%- include("partials/footer.ejs") %>

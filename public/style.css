@@ -1,0 +1,498 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: darkred;
+    align-items: center;
+    color: floralwhite;
+    height: 70px;
+    text-align: center;
+}
+
+.navbar h4 {
+    font-size: 28px;
+    flex-basis: 200px;
+}
+
+.navbar a {
+    flex-basis: 200px;
+    font-size: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+section .btn {
+    text-align: center;
+    border-radius: 25px;
+    text-decoration: none;
+    color: floralwhite;
+    padding: 10px 15px;
+    font-size: 30px;
+    background-color: darkred;
+    transition-duration: 0.3s;
+}
+
+section .btn:hover {
+    font-size: 35px;
+}
+section form {
+    margin-top: 25px;
+}
+
+h1 {
+    font-size: 5rem;
+    width: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+}
+
+
+.full-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.full-width div {
+    width: 70%;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 30px;
+}
+
+section .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container .book-box {
+    width: 60%;
+    height: auto;
+    margin-bottom: 30px;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+}
+
+.container .book-box p {
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.container .book-box .box-div img {
+    float: left; 
+    margin-right: 25px; 
+    box-shadow: 5px 5px 5px black;
+}
+
+.container .book-box span {
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #EE6B6E;
+}
+
+.container .buttons {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 20px;
+    height: 80px;
+}
+
+.buttons .edit {
+    text-align: center;
+    border-radius: 25px;
+    color: floralwhite;
+    padding: 6px 15px;
+    font-size: 15px;
+    background-color: darkred;
+    font-weight: 900;
+    border: none;
+    transition-duration: 0.3s;
+}
+
+.buttons .edit:hover {
+    box-shadow: 0px 0px 3px black;
+    font-size: 19px;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+
+.buttons .delete {
+    text-align: center;
+    border-radius: 25px;
+    color: darkred;
+    font-weight: 900;
+    background-color: floralwhite;
+    padding: 5px 15px;
+    font-size: 15px;
+    border: 2px solid darkred;
+    cursor: pointer;
+}
+
+.delete {
+    text-align: center;
+    border-radius: 25px;
+    color: darkred;
+    font-weight: 900;
+    background-color: floralwhite;
+    padding: 5px 15px;
+    font-size: 25px;
+    border: 3px solid darkred;
+    cursor: pointer;
+    
+    transition-duration: 0.3s;
+}
+
+.delete:hover {
+    background-color: darkred;
+    color: floralwhite;
+    box-shadow: 0px 0px 3px black;
+    font-size: 30px;
+}
+
+.buttons .delete:hover {
+    font-size: 18px;
+}
+
+.footer-container {
+    width: 100%;
+    height: 12vh;
+    background-color: darkred;
+    color: floralwhite;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.media-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.media-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+svg {
+    color: floralwhite;
+}
+
+#footer-line {
+    background-color: floralwhite; 
+    height: 1px; 
+    width: 30%;
+}
+
+.create-section h1 {
+    width: 70%;
+    align-self: center;
+}
+input, select {
+    background-color: whitesmoke;
+    border: 3px solid darkred;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+textarea {
+    border: 3px solid darkred;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+fieldset {
+    background-color: #EE6B6E;
+    border: 6px solid darkred;
+    border-radius: 10px;
+    padding: 30px 15px 10px 15px;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+input, select[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px;
+    border: 3px solid darkred;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+textarea[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px;
+    border: 3px solid darkred;
+    border-radius: 5px;
+}
+
+
+::placeholder {
+    color: grey;
+    opacity: 1;
+}
+
+.row:hover {
+    background-color: floralwhite;
+}
+
+label {
+    color: darkred;
+    font-size: 25px;
+    margin-right: 8px;
+    font-weight: 800;
+}
+
+.create-section .form-box {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.create-section form {
+    width: 75%;
+}
+
+.create-section form .inputs .names {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.create-section form .inputs .names div {
+    display: flex;
+    margin: 0px;
+}
+
+.create-section form .inputs .names div input {
+    width: 100%;
+}
+
+.create-section form fieldset img {
+    width: auto;
+    height: 530px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: -20px;
+    border: 4px solid darkred;
+    border-radius: 5px;
+}
+
+.create-section .form-box .textarea {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-section .form-box .textarea textarea {
+    width: 100%;
+    height: 150px;
+}
+
+.create-section form .inputs div {
+    margin-bottom: 20px;
+    text-align: start;
+    margin-left: 25px;
+}
+
+.create-section form .inputs .end {
+    margin: 0;
+    margin-left: 25px;
+}
+
+.create-section .form-box .date-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.create-section .form-box .date-box .date {
+    width: 30%;
+}
+
+.create-section .form-box .date-box .date-box1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-left: 0px;
+}
+
+.create-section form .inputs {
+    border-left: 2px solid black;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+}
+
+.create-section form fieldset .img {
+    width: 350px;
+    height: 530px;
+    background-color: floralwhite;
+    border: 4px solid darkred;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkred;
+    font-size: 30px;
+}
+
+.order .delete {
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.order .delete:hover {
+    font-size: 20px;
+}
+
+.order {
+    margin-top: 40px;
+}
+
+@media (max-width: 1400px) {
+    .create-section .form-box form fieldset .img {
+        width: 310px;
+        height: 490px;
+    }
+
+    .create-section .form-box form fieldset img {
+        width: 310px;
+        height: 490px;;
+    }
+}
+
+@media (max-width: 1050px) {
+    .create-section .form-box form fieldset {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .create-section .form-box form fieldset .names {
+        margin-top: 30px;
+    }
+
+    .create-section .form-box form fieldset div {
+        margin-left: 0px;
+    }
+
+    .create-section .form-box form fieldset .img {
+        margin: 20px 0px;
+    }
+
+    .create-section .form-box form fieldset img {
+        margin: 20px 0px;
+    }
+
+    .create-section form .inputs .end {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .create-section form .inputs {
+        margin-top: 20px;
+        width: 80%;
+        border-left: none;
+        border-top: 2px solid black;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .create-section .form-box form fieldset .img {
+        width: 250px;
+        height: 430px;
+    }
+
+    .create-section .form-box form fieldset img {
+        width: 250px;
+        height: 430px;
+    }
+
+    .create-section .form-box form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 14vh;
+    }
+
+    .footer-container .media-icons{
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .footer-container p{
+        width: 100%;
+    }
+    
+    .footer-container #footer-line {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    section h1 {
+        font-size: 4rem;
+    }
+
+    .container .buttons {
+        justify-content: center;
+        height: 37px;
+    }
+
+    .container .book-box .box-div img {
+        float: none; 
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+
+    .container .book-box p .box-div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+

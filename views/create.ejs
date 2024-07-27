@@ -1,0 +1,177 @@
+<%- include("partials/header.ejs") %>
+<section class="create-section">
+    <% if (locals.book) { %>
+        <h1>Edit Book <br> <span style="color: #EE6B6E; font-size: 50px;"><%= book.book_title %></span></h1>
+        <div class="full-width" style="margin-top: -20px;"><div></div></div>
+    <div class="form-box">
+        <form action="/edit" method="post">
+            <fieldset>
+            <img src="https://covers.openlibrary.org/b/isbn/<%= book.book_isbn %>-M.jpg" alt="book cover">
+            <div class="inputs">
+                <div class="names">
+                    <div>
+                        <label for="title">Title:</label>
+                        <input type="text" name="title" placeholder="<%= book.book_title %>" autocomplete="off" value="<%= book.book_title %>">
+                    </div>
+                    <div>
+                        <label for="author">Author:</label>
+                        <input  type="text" name="author" placeholder="<%= book.book_author %>" autocomplete="off" value="<%= book.book_author %>">
+                    </div>
+                </div>
+                <div class="textarea">
+                    <label for="review">Review:</label>
+                    <textarea type="text" name="review" autocomplete="off" value="<%= book.book_review %>"><%= book.book_review %></textarea>
+                </div>
+
+                <div>
+                    <label for="rating">Rating:</label>
+                    <select name="rating" size="1">
+                        <option value="<%= book.book_rating %>" selected><%= book.book_rating %></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="date-box">
+                    <div class="date-box1">
+                    <label for="day">Date:</label>
+                        <input type="text" class="date" name="year" placeholder="<%= bookYear %>" autocomplete="off" value="<%= bookYear %>">
+                        </div>
+                        <div class="date-box1">
+                        <input class="date" name="month" placeholder="<%= bookMonth %>" list="months" autocomplete="off" value="<%= bookMonth %>">
+                        <datalist id="months">
+                            <option value="January">
+                            <option value="February">
+                            <option value="March">
+                            <option value="April">
+                            <option value="May">
+                            <option value="June">
+                            <option value="July">
+                            <option value="August">
+                            <option value="September">
+                            <option value="October">
+                            <option value="November">
+                            <option value="December">
+                        </datalist>
+                        </div>
+                        <div class="date-box1">
+                    <input class="date" list="browsers" name="day" placeholder="<%= bookDay %>" autocomplete="off" value="<%= bookDay %>">
+                    <datalist id="browsers">
+                        <% for (var i = 1; i < 10; i++) {%>
+                            <option value="0<%= i %>">
+                        <% } %>
+                        <% for (var i = 10; i < 32; i++) {%>
+                            <option value=<%= i %>>
+                        <% } %>
+                    </datalist>
+                    </div>
+                </div>
+                <div>
+                    <label for="isbn">ISBN (required):</label>
+                    <input type="text" name="isbn" autocomplete="off" placeholder="<%= book.book_isbn %>" value="<%= book.book_isbn %>">
+                    <input type="text" hidden name="id" value="<%= bookId %>">
+                </div>
+                <div class="end">
+                    <input type="submit" class="delete" value="Edit Book">
+                </div>
+            </div>
+        </fieldset>
+        
+        </form>
+    </div>
+    <% } else {%>
+    <h1>Add Book To Your Library</h1>
+    <div class="full-width" style="margin-top: -20px;"><div></div></div>
+    <div class="form-box">
+        <form action="/add" method="post">
+            <fieldset>
+            <div class="img"><h4>Add ISBN</h4></div>
+            <div class="inputs">
+            <div class="names">
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" placeholder="Harry Potter" autocomplete="off">
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" name="author" placeholder="William Shakespear" autocomplete="off">
+                </div>
+            </div>
+            <div class="textarea">
+                <label for="review">Review:</label>
+                <textarea type="text" name="review" placeholder="It's about..." autocomplete="off"></textarea>
+            </div>
+
+            <div>
+                <label for="rating">Rating:</label>
+                <select name="rating" size="1">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="date-box">
+                <div class="date-box1">
+                <label for="day">Date:</label>
+                <div class="date-box1">
+                    <input class="date" type="text" name="year" placeholder="Year" autocomplete="off">
+                    </div>
+                    <input class="date" list="months" name="month" placeholder="Month" autocomplete="off">
+                    <datalist id="months">
+                        <option value="January">
+                        <option value="February">
+                        <option value="March">
+                        <option value="April">
+                        <option value="May">
+                        <option value="June">
+                        <option value="July">
+                        <option value="August">
+                        <option value="September">
+                        <option value="October">
+                        <option value="November">
+                        <option value="December">
+                    </datalist>
+                    </div>
+                    
+                    <div class="date-box1">
+                <input class="date" list="browsers" name="day" placeholder="Day" autocomplete="off">
+                <datalist id="browsers">
+                    <% for (var i = 1; i < 10; i++) {%>
+                        <option value="0<%= i %>">
+                    <% } %>
+                    <% for (var i = 10; i < 32; i++) {%>
+                        <option value=<%= i %>>
+                    <% } %>
+                </datalist>
+                </div>
+                
+            </div>
+            <div>
+                <label for="isbn">ISBN (required):</label>
+                <input type="text" name="isbn" autocomplete="off">
+            </div>
+            <div class="end">
+                <input type="submit" class="delete" value="Save Book">
+            </div>
+            </div>
+        </fieldset>
+        </form>
+    </div>
+    <% } %>
+ </section>
+<%- include("partials/footer.ejs") %>
